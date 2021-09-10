@@ -1,15 +1,34 @@
 .below-site-header-outlet.banner-connector {
-  padding-top: 2em;
+  .custom-homepage-wrapper {
+    background: url($meta_bg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 2em 0;
+    margin-top: 1em;
+    @media screen and (max-width: 900px) {
+      background-size: cover;
+      background-position-x: right;
+      background-position-y: bottom;
+      padding: 2em 0 0;
+    }
+  }
 
   .welcome-wrapper {
+    margin-top: 2em;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    box-shadow: shadow("card");
+    max-width: 930px;
+    margin: 2em auto 0.5em;
+    background: var(--secondary);
 
     .featured-todo {
-      background: var(--tertiary-low);
+      background: var(--secondary);
       display: flex;
       justify-content: space-between;
+      max-width: 500px;
 
       svg {
         transition: color 0.25s;
@@ -17,11 +36,9 @@
 
       > div {
         align-items: center;
-        background: var(--tertiary-low);
         display: flex;
         justify-content: center;
         text-align: center;
-        width: 33.3%;
 
         svg {
           display: block;
@@ -30,21 +47,30 @@
         }
 
         a {
-          transition: color 0.25s;
+          transition: all 0.25s;
           width: 100%;
+          padding: 2em;
+          color: var(--primary);
+
+          .d-icon {
+            color: var(--primary-high);
+            margin-bottom: 0.35em;
+          }
+
           &:hover {
-            color: var(--primary);
-            svg {
-              color: var(--primary-high);
+            color: var(--tertiary);
+            text-decoration: underline;
+            .d-icon {
+              color: var(--tertiary);
             }
           }
         }
 
         h3 {
           font-weight: normal;
+          white-space: nowrap;
           line-height: 1.2;
           margin: 0;
-          padding: 1em;
         }
       }
     }
@@ -56,8 +82,11 @@
     .welcome-content {
       background: var(--secondary);
       max-width: 375px;
-      padding: 2em;
       text-align: left;
+      padding: 2.5em 2em 3em;
+
+      h2 {
+      }
 
       p {
         margin-bottom: 0;
@@ -66,15 +95,19 @@
 
     @media screen and (max-width: 930px) {
       flex-wrap: wrap;
+      max-width: 650px;
+
+      p {
+        max-width: 500px;
+      }
 
       .welcome-content {
-        max-width: unset !important;
-        text-align: center !important;
-        width: 100%;
+        max-width: unset;
+        text-align: center;
       }
 
       .featured-todo {
-        padding: 1.5em 0;
+        padding: 0 0 2em;
         width: 100%;
       }
     }
@@ -84,23 +117,27 @@
     }
 
     @media screen and (min-width: 550px) {
-      .featured-todo > div:nth-of-type(2) {
-        border-left: 1px solid var(--secondary-high);
-        border-right: 1px solid var(--secondary-high);
+      .featured-todo > div:nth-of-type(2) a {
+        border-left: 1px solid var(--primary-low);
+        border-right: 1px solid var(--primary-low);
       }
     }
 
     @media screen and (max-width: 550px) {
+      max-width: 320px;
+      padding: 0;
+
       .featured-todo {
         flex-direction: column;
         padding: 0.5em;
 
         > div {
-          width: 100% !important;
+          width: 200px;
+          margin: 0 auto;
 
           &:nth-of-type(2) {
-            border-bottom: 1px solid var(--secondary-high);
-            border-top: 1px solid var(--secondary-high);
+            border-bottom: 1px solid var(--primary-low);
+            border-top: 1px solid var(--primary-low);
           }
         }
       }

@@ -2,5 +2,8 @@
   "name": "discourse-meta-banner",
   "about_url": null,
   "license_url": null,
-  "component": true
+  "component": true,
+  "assets": {
+    "meta-bg": "/assets/meta-bg.svg"
+  }
 }
