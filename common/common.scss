@@ -28,7 +28,6 @@
       background: var(--secondary);
       display: flex;
       justify-content: space-between;
-      max-width: 500px;
 
       svg {
         transition: color 0.25s;
@@ -39,6 +38,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
+        flex-grow: 1;
 
         svg {
           display: block;
@@ -104,11 +104,11 @@
       .welcome-content {
         max-width: unset;
         text-align: center;
+        padding: 1em;
       }
 
       .featured-todo {
         padding: 0 0 2em;
-        width: 100%;
       }
     }
 
@@ -124,20 +124,33 @@
     }
 
     @media screen and (max-width: 550px) {
-      max-width: 320px;
+      max-width: 80%;
       padding: 0;
 
       .featured-todo {
-        flex-direction: column;
         padding: 0.5em;
+        flex-grow: 1;
 
         > div {
-          width: 200px;
+          width: 50px;
           margin: 0 auto;
 
+          svg {
+            font-size: 1.25em;
+          }
+
+          h3 {
+            font-size: var(--font-down-1);
+            white-space: unset;
+          }
+
+          a {
+            padding: 0.5em;
+          }
+
           &:nth-of-type(2) {
-            border-bottom: 1px solid var(--primary-low);
-            border-top: 1px solid var(--primary-low);
+            border-left: 1px solid var(--primary-low);
+            border-right: 1px solid var(--primary-low);
           }
         }
       }

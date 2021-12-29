@@ -7,10 +7,11 @@ export default Component.extend({
 
   @discourseComputed("currentUser")
   shouldShow(currentUser) {
-    const isStaff = currentUser && currentUser.staff;
-    const lowTrustLevel = currentUser && currentUser.trust_level < 2;
-    // show banner only for anons and < TL 2
-    return !isStaff && (!currentUser || lowTrustLevel);
+    // const isStaff = currentUser && currentUser.staff;
+    // const lowTrustLevel = currentUser && currentUser.trust_level < 2;
+    // // show banner only for anons and < TL 2
+    // return !isStaff && (!currentUser || lowTrustLevel);
+    return true;
   },
 
   @discourseComputed("router.currentRouteName", "router.currentURL")
