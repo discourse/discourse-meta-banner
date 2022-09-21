@@ -1,16 +1,22 @@
-.below-site-header-outlet.banner-connector {
+.banner-connector {
   .custom-homepage-wrapper {
     background: url($meta_bg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 2em 0;
-    margin-top: 1em;
+    margin-top: -2.5em;
+    margin-bottom: 1em;
     @media screen and (max-width: 900px) {
       background-size: cover;
       background-position-x: right;
       background-position-y: bottom;
-      padding: 2em 0 0;
+      padding: 1em 0;
+    }
+    .has-sidebar-page & {
+      @media screen and (max-width: 1170px) {
+        padding: 0 0 2em;
+      }
     }
   }
 
@@ -93,64 +99,131 @@
       }
     }
 
-    @media screen and (max-width: 930px) {
-      flex-wrap: wrap;
-      max-width: 650px;
+    body:not(.has-sidebar-page) & {
+      @media screen and (max-width: 930px) {
+        flex-wrap: wrap;
+        max-width: 650px;
 
-      p {
-        max-width: 500px;
+        p {
+          max-width: 500px;
+        }
+
+        .welcome-content {
+          max-width: unset;
+          text-align: center;
+          padding: 2em 1em 1em;
+        }
+
+        .featured-todo {
+          padding: 0 0 2em;
+        }
       }
 
-      .welcome-content {
-        max-width: unset;
-        text-align: center;
-        padding: 1em;
+      @media screen and (max-width: 600px) {
+        padding: 0 2em;
       }
 
-      .featured-todo {
-        padding: 0 0 2em;
+      @media screen and (min-width: 550px) {
+        .featured-todo > div:nth-of-type(2) a {
+          border-left: 1px solid var(--primary-low);
+          border-right: 1px solid var(--primary-low);
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        max-width: 80%;
+        padding: 0;
+
+        .featured-todo {
+          padding: 0.5em 0.5em 1em;
+          flex-grow: 1;
+
+          > div {
+            width: 50px;
+            margin: 0 auto;
+
+            svg {
+              font-size: 1.25em;
+            }
+
+            h3 {
+              font-size: var(--font-down-1);
+              white-space: unset;
+            }
+
+            a {
+              padding: 0.5em;
+            }
+
+            &:nth-of-type(2) {
+              border-left: 1px solid var(--primary-low);
+              border-right: 1px solid var(--primary-low);
+            }
+          }
+        }
       }
     }
 
-    @media screen and (max-width: 600px) {
-      padding: 2em;
-    }
+    .has-sidebar-page & {
+      @media screen and (max-width: 1170px) {
+        flex-wrap: wrap;
+        max-width: 650px;
 
-    @media screen and (min-width: 550px) {
-      .featured-todo > div:nth-of-type(2) a {
-        border-left: 1px solid var(--primary-low);
-        border-right: 1px solid var(--primary-low);
+        p {
+          max-width: 500px;
+        }
+
+        .welcome-content {
+          max-width: unset;
+          text-align: center;
+          padding: 1.5em 1em 1em;
+        }
+
+        .featured-todo {
+          padding: 0 0 1em;
+        }
       }
-    }
 
-    @media screen and (max-width: 550px) {
-      max-width: 80%;
-      padding: 0;
+      @media screen and (max-width: 840px) {
+        padding: 0 2em;
+      }
 
-      .featured-todo {
-        padding: 0.5em;
-        flex-grow: 1;
+      @media screen and (min-width: 790px) {
+        .featured-todo > div:nth-of-type(2) a {
+          border-left: 1px solid var(--primary-low);
+          border-right: 1px solid var(--primary-low);
+        }
+      }
 
-        > div {
-          width: 50px;
-          margin: 0 auto;
+      @media screen and (max-width: 790px) {
+        max-width: 80%;
+        padding: 0;
 
-          svg {
-            font-size: 1.25em;
-          }
+        .featured-todo {
+          padding: 0.5em 0.5em 1em;
+          flex-grow: 1;
 
-          h3 {
-            font-size: var(--font-down-1);
-            white-space: unset;
-          }
+          > div {
+            width: 50px;
+            margin: 0 auto;
 
-          a {
-            padding: 0.5em;
-          }
+            svg {
+              font-size: 1.25em;
+            }
 
-          &:nth-of-type(2) {
-            border-left: 1px solid var(--primary-low);
-            border-right: 1px solid var(--primary-low);
+            h3 {
+              font-size: var(--font-down-1);
+              white-space: unset;
+            }
+
+            a {
+              padding: 0.5em;
+            }
+
+            &:nth-of-type(2) {
+              border-left: 1px solid var(--primary-low);
+              border-right: 1px solid var(--primary-low);
+            }
           }
         }
       }
