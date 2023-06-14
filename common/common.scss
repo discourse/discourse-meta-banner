@@ -24,7 +24,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    box-shadow: shadow("card");
+    box-shadow: var(--shadow-card);
     max-width: 930px;
     margin: 2em auto 0.5em;
     background: var(--secondary);
