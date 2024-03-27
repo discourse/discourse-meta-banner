@@ -1,6 +1,6 @@
 import Component from "@ember/component";
+import { service } from "@ember/service";
 import discourseComputed from "discourse-common/utils/decorators";
-import { inject as service } from "@ember/service";
 
 export default Component.extend({
   router: service(),
@@ -14,7 +14,7 @@ export default Component.extend({
   },
 
   @discourseComputed("router.currentRouteName", "router.currentURL")
-  discoveryRoute(currentRouteName, currentURL) {
-    return currentRouteName.indexOf("discovery") > -1;
+  discoveryRoute(currentRouteName) {
+    return currentRouteName.includes("discovery");
   },
 });
