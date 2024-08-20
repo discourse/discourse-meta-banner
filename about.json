@@ -4,6 +4,6 @@
   "license_url": null,
   "component": true,
   "assets": {
-    "meta-bg": "/assets/meta-bg.svg"
+    "blobs-banner": "/assets/blobs-banner.svg"
   }
 }
