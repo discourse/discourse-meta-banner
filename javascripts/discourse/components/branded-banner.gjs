@@ -9,7 +9,7 @@ export default class BrandedBanner extends Component {
   @service currentUser;
 
   get shouldShow() {
-    const anonOrLowTrust = (this.currentUser?.trust_level  ?? 0) <= 0;
+    const anonOrLowTrust = (this.currentUser?.trust_level ?? 0) <= 1;
     return (
       this.router.currentRouteName === `discovery.${defaultHomepage()}` &&
       anonOrLowTrust
