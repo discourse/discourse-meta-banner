@@ -1,4 +1,32 @@
+links:
+  type: objects
+  default:
+    [
+      { "name": "Search docs", "icon": "info-circle", "url": "/c/docs" },
+      { "name": "Browse themes", "icon": "palette", "url": "/c/themes" },
+      {
+        "name": "Buy hosting",
+        "icon": "fab-discourse",
+        "url": "https://discourse.org/pricing",
+      },
+    ]
+  schema:
+    name: "link"
+    identifier: name
+    properties:
+      name:
+        type: string
+        required: true
+      icon:
+        type: string
+        required: true
+      url:
+        type: string
+        required: true
+        validations:
+          url: true
+
 svg_icons:
-  default: "palette|fab-discourse"
+  default: ""
   type: "list"
   list_type: "compact"

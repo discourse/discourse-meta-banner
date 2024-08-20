@@ -2,6 +2,18 @@ en:
   meta_banner:
     welcome: Welcome to Discourse Meta!
     subtitle: Join the conversation about the discussion platform built for the future of the Internet.
-    docs: Search docs
-    themes: Browse themes
-    hosting: Buy hosting
+  theme_metadata:
+    settings:
+      links:
+        schema:
+          properties:
+            name:
+              label: Name
+              description: Text for banner link
+            icon:
+              label: Icon
+              description: Font Awesome 5 icon name
+            url:
+              label: URL
+              description: URL for the name + icon
+      svg_icons: "add icon names here that aren't included in the default subset"
