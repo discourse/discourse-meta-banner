@@ -1,5 +1,6 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
+import { htmlSafe } from "@ember/template";
 import { defaultHomepage } from "discourse/lib/utilities";
 import icon from "discourse-common/helpers/d-icon";
 import i18n from "discourse-common/helpers/i18n";
@@ -23,7 +24,7 @@ export default class BrandedBanner extends Component {
           <div class="custom-banner__content-wrapper">
             <div class="custom-banner__intro">
               <h1>{{i18n (themePrefix "meta_banner.welcome")}}</h1>
-              <p>{{i18n (themePrefix "meta_banner.subtitle")}}</p>
+              <p>{{htmlSafe (i18n (themePrefix "meta_banner.subtitle"))}}</p>
             </div>
             <div class="custom-banner__list">
               {{#each settings.links as |link|}}
