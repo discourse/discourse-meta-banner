@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe "Meta Banner", type: :system do
+RSpec.describe "Meta Banner" do
   let!(:theme) { upload_theme_component }
   fab!(:user) { Fabricate(:user, trust_level: TrustLevel[3]) }
 
